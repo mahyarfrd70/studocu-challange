@@ -1,0 +1,15 @@
+{
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "jsxBracketSameLine": true,
+  "printWidth": 120,
+
+  "importOrder": ["react", "next", "^@/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+
+  "twConfig": "tailwind.config.js",
+  "twClassesPosition": "components-first",
+  "twUnknownClassesPosition": "ends"
+}

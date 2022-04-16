@@ -1,3 +1,45 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["@typescript-eslint", "jest"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended", // TypeScript rules
+    "plugin:jest/all",
+    "plugin:storybook/recommended",
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true,
+    "jest/globals": true
+  },
+  "ignorePatterns": ["node_modules/*", ".next/*"],
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "jest/prefer-expect-assertions": ["warn", {"onlyFunctionsWithAsyncKeyword": true}],
+    "jest/no-hooks": "off",
+    "jest/prefer-lowercase-title": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
