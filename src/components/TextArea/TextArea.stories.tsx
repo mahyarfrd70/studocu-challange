@@ -31,7 +31,7 @@ const Template: Story<TextAreaProps> = ({value, ...args}) => {
 export const Default = Template.bind({});
 Default.args = {
   value: '',
-  name: 'nswer',
+  name: 'answer',
   invalidMessage: '',
   placeholder: 'Placeholder',
 };

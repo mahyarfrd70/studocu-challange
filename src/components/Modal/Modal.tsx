@@ -28,13 +28,13 @@ const Modal = ({open, onClose, children}: PropsWithChildren<ModalProps>) => {
   }, []);
 
   return (
-    <div className={clsx(styles.modalContainer, {'!hidden': !isOpen})}>
-      <If condition={Boolean(onClose)}>
-        <div className="absolute top-0 bottom-0 right-0 left-0" onClick={handleCloseModal} />
+    <div data-testid="modal-container" className={clsx(styles.modalContainer, {'!hidden': !isOpen})}>
+      <If condition={isOpen}>
+        <If condition={Boolean(onClose)}>
+          <div data-testid="modal-mask" className="absolute top-0 bottom-0 right-0 left-0" onClick={handleCloseModal} />
+        </If>
+        <div className="bg-white p-4 opacity-100 z-40 max-w-3xl w-full">{children}</div>
       </If>
-      <div className="bg-white p-4 opacity-100 z-40 max-w-3xl w-full">
-        <If condition={isOpen}>{children}</If>
-      </div>
     </div>
   );
 };

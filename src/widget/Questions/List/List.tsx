@@ -2,6 +2,7 @@ import React, {useCallback} from 'react';
 
 import Card from '@/components/Card';
 import If from '@/components/If';
+import Tooltip from '@/components/Tooltip';
 import {useAppDispatch, useAppSelector} from '@/redux/hooks';
 import {editQuestion, deleteQuestion} from '@/redux/questions/slice';
 import type {Question} from '@/redux/questions/type';
@@ -21,7 +22,11 @@ function List() {
   return (
     <div>
       <If condition={Boolean(questions.length)}>
-        <h2 className="text-2xl w-fit mb-6 border-b-2">Created Questions</h2>
+        <div className="w-fit mb-6">
+          <Tooltip tooltipContent="Here you can find the created questions and their answer.">
+            <h2 className="text-2xl border-b-2">Created Questions</h2>
+          </Tooltip>
+        </div>
         {questions.map((item, i) => (
           <Card
             key={item.id}

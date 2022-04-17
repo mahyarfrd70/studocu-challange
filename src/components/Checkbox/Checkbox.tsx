@@ -6,7 +6,9 @@ const Checkbox = ({checked, label, onChange}: CheckboxProps) => {
   return (
     <label className="label cursor-pointer justify-start">
       <input type="checkbox" checked={checked} className="checkbox checkbox-primary" onChange={onChange} />
-      <span className="label-text ml-3">{label}</span>
+      <span data-testid="checkbox-label" className="label-text ml-3">
+        {label}
+      </span>
     </label>
   );
 };

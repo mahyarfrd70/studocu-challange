@@ -7,6 +7,7 @@ import Header from '..';
 describe('Header component', () => {
   //these tests heas been written based on the useAuthMember mock and the order of test has not to be changed
   it('buttons', async () => {
+    expect.assertions(12);
     const addMock = jest.fn();
     const sortMock = jest.fn();
     const removeMock = jest.fn();
