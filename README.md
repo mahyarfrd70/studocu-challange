@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Studocu Challange
 
-## Getting Started
+The project has been created based on Nextjs and Typescript. The final application is live. It's deployed by Vercel zero configuration deployment, so to check if the application is working you don't need to run it locally, just navigate to [https://studocu-challange.vercel.app/](https://studocu-challange.vercel.app/) to see the last version of application.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Nextjs
+- Typescript
+- Redux Toolkit
+- Tailwind
+- Storybook
+- Jest
+- Testing Library
+- Eslint
+- Prettier
+- Docker
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+To run the project, First of all, you need to follow the below steps:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. You have to have Nodejs installed.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Clone the project from repository and open it with your prefered IDE.
 
-## Learn More
+3. Run `yarn install` in te root directory.
 
-To learn more about Next.js, take a look at the following resources:
+4. Run `npx husky install` in te root directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+And now the project is ready to be run in different mode and environment, so to run on different mode please follow the below steps.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Development
 
-## Deploy on Vercel
+To run on development mode , you just need to run `yarn dev`, then open `http://localhost:3000` on your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To run on production mode , please run `yarn build` and then `yarn start`, afterward, open `http://localhost:3000` on your browser.
+
+#### Test
+
+To run test cases , please run `yarn test` .
+
+#### Storybook
+
+To run stories, please run `yarn storybook` , then navigate to `http://localhost:6006` from your browser.
+
+## Run with docker
+
+To run the project with docker, you have to have docker installed and docker daemon started, then follow the below steps:
+
+1. Run `docker build -t your-tag .`
+
+2. Run `docker run -p 3000:3000 your-tag`
+
+Finally, you can see your app run on top the docker on `http://localhost:3000`.
+
+## Conclusion
+
+I'ver tried to focus on showing the both my technical skills and technologies knowledge in this project.
+
+Cheers.
