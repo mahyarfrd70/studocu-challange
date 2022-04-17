@@ -1,5 +1,4 @@
 import type {Meta, Story} from '@storybook/react';
-import {useState} from 'react';
 
 import Tooltip from '.';
 import type {TooltipProps} from '.';
