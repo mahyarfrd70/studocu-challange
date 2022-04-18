@@ -1,4 +1,4 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import {v4 as uuidv4} from 'uuid';
 
 import {ManipulateTypes, Question, QuestionsState} from './type';
@@ -9,7 +9,7 @@ const defaultManipulateFormValues = {
   answer: '',
 };
 
-const initialState: QuestionsState = {
+export const questionsInitialState: QuestionsState = {
   questions: [],
   isLoading: false,
   manipulateType: null,
@@ -18,7 +18,7 @@ const initialState: QuestionsState = {
 
 export const questionsSlice = createSlice({
   name: 'questions',
-  initialState,
+  initialState: questionsInitialState,
   reducers: {
     addNewQuestion(state) {
       state.manipulateType = ManipulateTypes.ADD;
@@ -42,17 +42,17 @@ export const questionsSlice = createSlice({
       state.manipulateFormValues = defaultManipulateFormValues;
       state.isLoading = false;
     },
-    editQuestion(state, action) {
+    editQuestion(state, action: PayloadAction<Question>) {
       state.manipulateType = ManipulateTypes.EDIT;
       state.manipulateFormValues = action.payload;
     },
-    deleteQuestion(state, action) {
+    deleteQuestion(state, action: PayloadAction<number>) {
       state.questions.splice(action.payload, 1);
     },
     startLoading(state) {
       state.isLoading = true;
     },
-    manipulateQuestionSync(state, action) {
+    manipulateQuestionSync(state, action: PayloadAction<Omit<Question, 'id'>>) {
       if (state.manipulateType === ManipulateTypes.ADD) {
         const newQuestion = {
           id: uuidv4(),
@@ -70,7 +70,7 @@ export const questionsSlice = createSlice({
   },
 });
 
-const delayedResponse = (values: Omit<Question, 'id'>) => {
+const delayedResponse = (values: Omit<Question, 'id'>): Promise<Omit<Question, 'id'>> => {
   return new Promise((resolve) => {
     setTimeout(() => resolve(values), 5000);
   });

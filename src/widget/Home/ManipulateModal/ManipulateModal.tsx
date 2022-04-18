@@ -25,7 +25,6 @@ const ManipulateModal = () => {
           <h2 className="text-2xl">{modalType} question</h2>
         </Tooltip>
       </div>
-
       <ManipulateForm />
     </Modal>
   );

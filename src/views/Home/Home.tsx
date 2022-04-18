@@ -3,8 +3,8 @@ import type {FC} from 'react';
 
 import Container from '@/components/Container';
 import Layout from '@/layout';
-import QuestionsList from '@/widget/Questions/List';
-import ManipulateQuestionModal from '@/widget/Questions/ManipulateModal';
+import QuestionsList from '@/widget/Home/List';
+import ManipulateQuestionModal from '@/widget/Home/ManipulateModal';
 
 const Home: FC<Record<string, unknown>> = () => {
   return (

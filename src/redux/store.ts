@@ -2,10 +2,12 @@ import {configureStore} from '@reduxjs/toolkit';
 
 import questionsReducer from './questions/slice';
 
+export const AppReducer = {
+  questions: questionsReducer,
+};
+
 export const store = configureStore({
-  reducer: {
-    questions: questionsReducer,
-  },
+  reducer: AppReducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
