@@ -57,6 +57,6 @@ Finally, you can see your app run on top the docker on `http://localhost:3000`.
 
 ## Conclusion
 
-I'ver tried to focus on showing the both my technical skills and technologies knowledge in this project.
+In this project, I tried to demonstrate both my technical skills and my knowledge of technologies.
 
 Cheers.
